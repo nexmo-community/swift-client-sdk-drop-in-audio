@@ -9,7 +9,7 @@ This is a Swift project that uses the [Client SDK](https://developer.nexmo.com/c
 If you're new to Vonage, you can [sign up for a Vonage API account](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=github&utm_campaign=) and get some free credit to get you started.
 
 ## Running the project
-The project uses a REST server, to use the [Conversation API](https://developer.nexmo.com/conversation/overview) to create users and conversations. See the accompanying [blog post](LINKCOMING) for more information.
+The project uses a [REST server](https://github.com/nexmo-community/swift-vapor-drop-in-audio), to use the [Conversation API](https://developer.nexmo.com/conversation/overview) to create users and conversations. See the accompanying [blog post](LINKCOMING) for more information.
 
 Clone the project to your computer, using the terminal:
 
