@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12B30F9C25CAEA7500289801 /* VonageHouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B30F9B25CAEA7500289801 /* VonageHouseApp.swift */; };
+		12B30F9E25CAEA7500289801 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B30F9D25CAEA7500289801 /* ContentView.swift */; };
+		12B30FA025CAEA7800289801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B30F9F25CAEA7800289801 /* Assets.xcassets */; };
+		12B30FA325CAEA7800289801 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B30FA225CAEA7800289801 /* Preview Assets.xcassets */; };
+		12F71D5B25CC19440082B543 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F71D5A25CC19440082B543 /* Models.swift */; };
+		12F71D5E25CC49F60082B543 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F71D5D25CC49F60082B543 /* RoomView.swift */; };
+		12F71D6125CC4B520082B543 /* RemoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F71D6025CC4B520082B543 /* RemoteLoader.swift */; };
+		12F71D6425CC4DAC0082B543 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F71D6325CC4DAC0082B543 /* AuthView.swift */; };
+		46ACC54CB844DF2F6CB8B9FB /* Pods_VonageHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04769C11B15A7D8B3B068A6 /* Pods_VonageHouse.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12B30F9825CAEA7500289801 /* VonageHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VonageHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B30F9B25CAEA7500289801 /* VonageHouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VonageHouseApp.swift; sourceTree = "<group>"; };
+		12B30F9D25CAEA7500289801 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12B30F9F25CAEA7800289801 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12B30FA225CAEA7800289801 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12B30FA425CAEA7800289801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12F71D5A25CC19440082B543 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		12F71D5D25CC49F60082B543 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		12F71D6025CC4B520082B543 /* RemoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoader.swift; sourceTree = "<group>"; };
+		12F71D6325CC4DAC0082B543 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		B04769C11B15A7D8B3B068A6 /* Pods_VonageHouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VonageHouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFB2200A1BBE2F43E65B6C22 /* Pods-VonageHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VonageHouse.debug.xcconfig"; path = "Target Support Files/Pods-VonageHouse/Pods-VonageHouse.debug.xcconfig"; sourceTree = "<group>"; };
+		EDFA2BA05A3D092B184DA386 /* Pods-VonageHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VonageHouse.release.xcconfig"; path = "Target Support Files/Pods-VonageHouse/Pods-VonageHouse.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12B30F9525CAEA7500289801 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46ACC54CB844DF2F6CB8B9FB /* Pods_VonageHouse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12B30F8F25CAEA7500289801 = {
+			isa = PBXGroup;
+			children = (
+				12B30F9A25CAEA7500289801 /* VonageHouse */,
+				12B30F9925CAEA7500289801 /* Products */,
+				891421A0C5B1FFC5AC663EF0 /* Pods */,
+				B06922D61E0E480DC630BD53 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		12B30F9925CAEA7500289801 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12B30F9825CAEA7500289801 /* VonageHouse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12B30F9A25CAEA7500289801 /* VonageHouse */ = {
+			isa = PBXGroup;
+			children = (
+				12B30F9B25CAEA7500289801 /* VonageHouseApp.swift */,
+				12B30F9D25CAEA7500289801 /* ContentView.swift */,
+				12F71D6025CC4B520082B543 /* RemoteLoader.swift */,
+				12F71D5D25CC49F60082B543 /* RoomView.swift */,
+				12F71D6325CC4DAC0082B543 /* AuthView.swift */,
+				12F71D5A25CC19440082B543 /* Models.swift */,
+				12B30F9F25CAEA7800289801 /* Assets.xcassets */,
+				12B30FA425CAEA7800289801 /* Info.plist */,
+				12B30FA125CAEA7800289801 /* Preview Content */,
+			);
+			path = VonageHouse;
+			sourceTree = "<group>";
+		};
+		12B30FA125CAEA7800289801 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				12B30FA225CAEA7800289801 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		891421A0C5B1FFC5AC663EF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFB2200A1BBE2F43E65B6C22 /* Pods-VonageHouse.debug.xcconfig */,
+				EDFA2BA05A3D092B184DA386 /* Pods-VonageHouse.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B06922D61E0E480DC630BD53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B04769C11B15A7D8B3B068A6 /* Pods_VonageHouse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12B30F9725CAEA7500289801 /* VonageHouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12B30FA725CAEA7800289801 /* Build configuration list for PBXNativeTarget "VonageHouse" */;
+			buildPhases = (
+				731D7BBA96D450D4355405F5 /* [CP] Check Pods Manifest.lock */,
+				12B30F9425CAEA7500289801 /* Sources */,
+				12B30F9525CAEA7500289801 /* Frameworks */,
+				12B30F9625CAEA7500289801 /* Resources */,
+				2A84E216ECBCF210FA36B23B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VonageHouse;
+			productName = VonageHouse;
+			productReference = 12B30F9825CAEA7500289801 /* VonageHouse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12B30F9025CAEA7500289801 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					12B30F9725CAEA7500289801 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 12B30F9325CAEA7500289801 /* Build configuration list for PBXProject "VonageHouse" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 12B30F8F25CAEA7500289801;
+			productRefGroup = 12B30F9925CAEA7500289801 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12B30F9725CAEA7500289801 /* VonageHouse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12B30F9625CAEA7500289801 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B30FA325CAEA7800289801 /* Preview Assets.xcassets in Resources */,
+				12B30FA025CAEA7800289801 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A84E216ECBCF210FA36B23B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VonageHouse/Pods-VonageHouse-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VonageHouse/Pods-VonageHouse-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VonageHouse/Pods-VonageHouse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		731D7BBA96D450D4355405F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VonageHouse-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12B30F9425CAEA7500289801 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12F71D5B25CC19440082B543 /* Models.swift in Sources */,
+				12F71D5E25CC49F60082B543 /* RoomView.swift in Sources */,
+				12F71D6425CC4DAC0082B543 /* AuthView.swift in Sources */,
+				12B30F9E25CAEA7500289801 /* ContentView.swift in Sources */,
+				12B30F9C25CAEA7500289801 /* VonageHouseApp.swift in Sources */,
+				12F71D6125CC4B520082B543 /* RemoteLoader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		12B30FA525CAEA7800289801 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		12B30FA625CAEA7800289801 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12B30FA825CAEA7800289801 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFB2200A1BBE2F43E65B6C22 /* Pods-VonageHouse.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VonageHouse/Preview Content\"";
+				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VonageHouse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vonage.VonageHouse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12B30FA925CAEA7800289801 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDFA2BA05A3D092B184DA386 /* Pods-VonageHouse.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VonageHouse/Preview Content\"";
+				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VonageHouse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vonage.VonageHouse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12B30F9325CAEA7500289801 /* Build configuration list for PBXProject "VonageHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B30FA525CAEA7800289801 /* Debug */,
+				12B30FA625CAEA7800289801 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12B30FA725CAEA7800289801 /* Build configuration list for PBXNativeTarget "VonageHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B30FA825CAEA7800289801 /* Debug */,
+				12B30FA925CAEA7800289801 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12B30F9025CAEA7500289801 /* Project object */;
+}
