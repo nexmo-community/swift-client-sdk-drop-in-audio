@@ -34,3 +34,8 @@ struct Auth: Codable {
         let jwt: String
     }
 }
+
+struct Member: Hashable {
+    let id: String
+    let name: String
+}

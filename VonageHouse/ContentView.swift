@@ -1,81 +1,63 @@
-//
-//  ContentView.swift
-//  VonageHouse
-//
-//  Created by Abdulhakim Ajetunmobi on 03/02/2021.
-//
-
 import SwiftUI
+import NexmoClient
+import AVFoundation
 
 struct ContentView: View {
-    @ObservedObject var roomModel = RoomModel()
+    @ObservedObject var authModel = AuthModel()
     
     var body: some View {
-        VStack {
-            List(roomModel.results, id: \.id) { item in
-                VStack(alignment: .leading) {
-                    NavigationLink(destination: RoomView(convID: item.id, convName: item.displayName)) {
-                        Text(item.displayName)
-                    }
-                }
-            }.onAppear(perform: roomModel.loadRooms)
-            Button("Create room") {
-                roomModel.showingCreateModal.toggle()
-            }
-            NavigationLink("", destination: RoomView(convID: roomModel.convID ?? "", convName: roomModel.roomName),
-                           isActive: $roomModel.hasConv).hidden()
-        }
-        .navigationTitle("VonageCottage 👋")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(trailing:
-                                Button("Refresh") {
-                                    roomModel.loadRooms()
-                                }
-        )
-        .sheet(isPresented: $roomModel.showingCreateModal, content: {
-            CreateRoomModal(roomModel: roomModel)
-        })
-    }
-}
-
-struct CreateRoomModal: View {
-    @ObservedObject var roomModel: RoomModel
-    
-    var body: some View {
-        if !roomModel.loading {
+        NavigationView {
             VStack {
-                TextField("Enter the room name", text: $roomModel.roomName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .multilineTextAlignment(.center)
-                    .padding(20)
-                Button("Create room") {
-                    roomModel.loading = true
-                    roomModel.createRoom()
+                if authModel.loading {
+                    ProgressView()
+                    Text("Loading").padding(20)
+                } else {
+                    TextField("Name", text: $authModel.name)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .multilineTextAlignment(.center)
+                        .padding(20)
+                    Button("Log in") {
+                        authModel.login()
+                    }
+                    NavigationLink("", destination: RoomListView(),
+                                   isActive: $authModel.connected).hidden()
+                    
                 }
+            }.navigationTitle("VonageHouse 👋")
+            .navigationBarBackButtonHidden(true)
+        }.onAppear(perform: authModel.setup)
+    }
+}
+
+final class AuthModel: NSObject, ObservableObject, NXMClientDelegate {
+    @Published var loading = false
+    @Published var connected = false
+    
+    var name = ""
+    
+    private let audioSession = AVAudioSession.sharedInstance()
+    
+    func setup() {
+        requestPermissionsIfNeeded()
+    }
+    
+    func requestPermissionsIfNeeded() {
+        if audioSession.recordPermission != .granted {
+            audioSession.requestRecordPermission { (isGranted) in
+                print("Microphone permissions \(isGranted)")
             }
-        } else {
-            ProgressView()
         }
     }
     
-    
-}
-
-final class RoomModel: ObservableObject {
-    @Published var results = [RoomResponse]()
-    @Published var loading: Bool = false
-    @Published var showingCreateModal = false
-    @Published var hasConv = false
-    
-    var convID: String? = nil
-    var roomName: String = ""
-    
-    func loadRooms() {
-        RemoteLoader.load(urlString: "https://URL.ngrok.io/rooms", body: Optional<String>.none, responseType: [RoomResponse].self) { result in
+    func login() {
+        loading = true
+        
+        RemoteLoader.load(urlString: "https://URL.ngrok.io/auth", body: Auth.Body(name: self.name), responseType: Auth.Response.self) { result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.results = response
+                    NXMClient.shared.setDelegate(self)
+                    NXMClient.shared.login(withAuthToken: response.jwt)
                 }
             default:
                 break
@@ -83,25 +65,19 @@ final class RoomModel: ObservableObject {
         }
     }
     
-    func createRoom() {
-        RemoteLoader.load(urlString: "https://URL.ngrok.io/rooms", body: CreateRoom.Body(displayName: self.roomName), responseType: CreateRoom.Response.self) { result in
-            switch result {
-            case .success(let response):
-                self.convID = response.id
-                DispatchQueue.main.async {
-                    self.hasConv = true
-                    self.loading = false
-                    self.showingCreateModal = false
-                }
-            default:
-                break
-            }
+    func client(_ client: NXMClient, didChange status: NXMConnectionStatus, reason: NXMConnectionStatusReason) {
+        switch status {
+        case .connected:
+            self.connected = true
+            self.loading = false
+        default:
+            self.connected = false
+            self.loading = false
         }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    func client(_ client: NXMClient, didReceiveError error: Error) {
+        self.loading = false
+        self.connected = false
     }
 }

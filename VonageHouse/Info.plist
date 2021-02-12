@@ -47,6 +47,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>To make calls</string>
+	<string>Microphone access required to take part in audio rooms.</string>
 </dict>
 </plist>

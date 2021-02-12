@@ -11,7 +11,7 @@ import SwiftUI
 struct VonageHouseApp: App {
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            ContentView()
         }
     }
 }

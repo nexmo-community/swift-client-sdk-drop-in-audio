@@ -14,11 +14,6 @@ struct MemberView: View {
     }
 }
 
-struct Member: Hashable {
-    let id: String
-    let name: String
-}
-
 struct RoomView: View {
     @ObservedObject var conversationModel = ConversationModel()
     @Environment(\.presentationMode) var presentationMode
@@ -47,7 +42,7 @@ struct RoomView: View {
                         }
                     }
                     Button("Leave room") {
-                        conversationModel.leaveConversation(completion: { presentationMode.wrappedValue.dismiss()})
+                        conversationModel.leaveConversation(completion: { presentationMode.wrappedValue.dismiss() })
                     }
                 }
             }
