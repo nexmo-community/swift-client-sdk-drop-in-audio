@@ -15,6 +15,10 @@ Clone the project to your computer, using the terminal:
 
 `git clone git@github.com:nexmo-community/swift-client-sdk-drop-in-audio.git`
 
+Install [Cocoapods](https://cocoapods.org) if needed:
+
+`sudo gem install cocoapods`
+
 Install the Client SDK with Cocoapods:
 
 `pod install`
