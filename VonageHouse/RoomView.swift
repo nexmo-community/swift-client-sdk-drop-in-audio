@@ -1,5 +1,6 @@
 import SwiftUI
 import NexmoClient
+import AVFoundation
 
 struct MemberView: View {
     var memberName: String

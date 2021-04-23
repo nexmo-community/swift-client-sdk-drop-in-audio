@@ -1,13 +1,16 @@
 import Foundation
 
 final class RemoteLoader {
+    
+    static let baseURL = "https://URL.ngrok.io"
+    
     enum RemoteLoaderError: Error {
         case url
         case data
     }
     
-    static func load<T: Codable, U: Codable>(urlString: String, body: T?, responseType: U.Type, completion: @escaping ((Result<U, RemoteLoaderError>) -> Void)) {
-        guard let url = URL(string: urlString) else {
+    static func load<T: Codable, U: Codable>(path: String, body: T?, responseType: U.Type, completion: @escaping ((Result<U, RemoteLoaderError>) -> Void)) {
+        guard let url = URL(string: baseURL + path) else {
             completion(.failure(.url))
             return
         }

@@ -52,7 +52,7 @@ final class AuthModel: NSObject, ObservableObject, NXMClientDelegate {
     func login() {
         loading = true
         
-        RemoteLoader.load(urlString: "https://URL.ngrok.io/auth", body: Auth.Body(name: self.name), responseType: Auth.Response.self) { result in
+        RemoteLoader.load(path: "/auth", body: Auth.Body(name: self.name), responseType: Auth.Response.self) { result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {

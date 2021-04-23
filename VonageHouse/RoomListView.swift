@@ -63,7 +63,7 @@ final class RoomModel: ObservableObject {
     var roomName: String = ""
     
     func loadRooms() {
-        RemoteLoader.load(urlString: "https://URL.ngrok.io/rooms", body: Optional<String>.none, responseType: [RoomResponse].self) { result in
+        RemoteLoader.load(path: "/rooms", body: Optional<String>.none, responseType: [RoomResponse].self) { result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
@@ -76,7 +76,7 @@ final class RoomModel: ObservableObject {
     }
     
     func createRoom() {
-        RemoteLoader.load(urlString: "https://URL.ngrok.io/rooms", body: CreateRoom.Body(displayName: self.roomName), responseType: CreateRoom.Response.self) { result in
+        RemoteLoader.load(path: "/rooms", body: CreateRoom.Body(displayName: self.roomName), responseType: CreateRoom.Response.self) { result in
             switch result {
             case .success(let response):
                 self.convID = response.id
