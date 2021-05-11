@@ -2,7 +2,7 @@
 
 <img src="https://developer.nexmo.com/assets/images/Vonage_Nexmo.svg" height="48px" alt="Nexmo is now known as Vonage" />
 
-This is a Swift project that uses the [Client SDK](https://developer.nexmo.com/client-sdk/overview) to allow for drop in audio chat rooms. Check out the accompanying [blog post](LINKCOMMING) for more information.
+This is a Swift project that uses the [Client SDK](https://developer.nexmo.com/client-sdk/overview) to allow for drop in audio chat rooms. Check out the accompanying [blog post](https://learn.vonage.com/blog/2021/03/03/building-a-drop-in-audio-app-with-swiftui-vapor-and-vonage-part-2/) for more information.
 
 ## Welcome to Vonage
 
