@@ -16,7 +16,7 @@ struct MemberView: View {
 }
 
 struct RoomView: View {
-    @ObservedObject var conversationModel = ConversationModel()
+    @StateObject var conversationModel = ConversationModel()
     @Environment(\.presentationMode) var presentationMode
     
     var convID: String
@@ -60,6 +60,7 @@ final class ConversationModel: NSObject, ObservableObject, NXMConversationDelega
     @Published var members = [Member]()
     
     private var conversation: NXMConversation?
+    private let currentUsername: String? = NXMClient.shared.user?.name
     
     func loadConversation(convID: String) {
         guard conversation == nil else { return }
@@ -68,18 +69,25 @@ final class ConversationModel: NSObject, ObservableObject, NXMConversationDelega
         NXMClient.shared.getConversationWithUuid(convID) { error, conversation in
             self.conversation = conversation
             self.conversation?.delegate = self
-            
-            self.conversation?.join { error, member in
-                DispatchQueue.main.async {
-                    self.loading = false
-                    self.members = self.conversation!.allMembers.map { self.memberFrom($0) }
-                    if !self.members.contains(where: { $0.name == member?.user.name }) {
-                        self.members.append(self.memberFrom(member!))
+
+            self.conversation?.join { [weak self] error, memberId in
+                guard let self = self else { return }
+                self.conversation?.getMembersPage(withPageSize: 100, order: .asc) { error, membersPage in
+                    DispatchQueue.main.async {
+                        guard let membersPage = membersPage else { return }
+                        self.members = membersPage.memberSummaries.map { self.memberFrom($0) }
+
+                        if !self.members.contains(where: { $0.name == self.currentUsername }) {
+                            if let id = memberId, let name = self.currentUsername {
+                                self.members.append(Member(id: id, name: name))
+                            }
+                        }
+                        self.loading = false
                     }
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.conversation?.enableMedia()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        self.conversation?.enableMedia()
+                    }
                 }
             }
         }
@@ -91,16 +99,20 @@ final class ConversationModel: NSObject, ObservableObject, NXMConversationDelega
         completion()
     }
     
-    func memberFrom(_ nxmMember: NXMMember) -> Member {
-        return Member(id: nxmMember.memberUuid, name: nxmMember.user.name)
+    func memberFrom(_ event: NXMMemberEvent) -> Member {
+        return Member(id: event.fromMemberId, name: event.embeddedInfo?.user.name ?? "")
+    }
+    
+    func memberFrom(_ nxmMemberSummary: NXMMemberSummary) -> Member {
+        return Member(id: nxmMemberSummary.memberUuid, name: nxmMemberSummary.user.name)
     }
     
     func conversation(_ conversation: NXMConversation, didReceive event: NXMMemberEvent) {
-        let member = memberFrom(event.member)
+        let member = memberFrom(event)
         switch event.state {
         case .joined:
             guard !self.members.contains(member),
-                  NXMClient.shared.user?.name != member.name else { break }
+                  self.currentUsername != member.name else { break }
             self.members.append(member)
         case .left:
             guard self.members.contains(member),
